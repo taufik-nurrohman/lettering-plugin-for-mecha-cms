@@ -1,0 +1,83 @@
+﻿Title: Lettering PHP
+Author: Taufik Nurrohman
+URL: http://latitudu.com
+Version: 1.0.0
+
+====
+
+> This plugin will split your post title letters into individual parts as HTML elements.
+
+Just like [lettering.js](http://github.com/davatron5000/Lettering.js "A JQuery Plugin for Radical Web Typography"), but this works in server side.
+
+Plugin manipulation will be activated optionally via custom field in the post editor, labelled as _Break post title text?_
+
+#### Before
+
+~~~ .html
+Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; A B C
+~~~
+
+#### After
+
+HTML markup has been tidied up.
+
+~~~ .html
+
+<span aria-label="Charlie&rsquo;s Bike is Broken &hellip; A B C">
+  <span aria-hidden="true" class="word-group">
+    <span class="word-1 char-group">
+      <span class="char-1">C</span>
+      <span class="char-2">h</span>
+      <span class="char-3">a</span>
+      <span class="char-4">r</span>
+      <span class="char-5">l</span>
+      <span class="char-6">i</span>
+      <span class="char-7">e</span>
+      <span class="char-8">&rsquo;</span>
+      <span class="char-9">s</span>
+    </span> 
+    <span class="word-2 char-group">
+      <span class="char-10">B</span>
+      <span class="char-11">i</span>
+      <span class="char-12">k</span>
+      <span class="char-13">e</span>
+    </span> 
+    <span class="word-3 char-group">
+      <em>
+        <span class="char-14">i</span>
+        <span class="char-15">s</span>
+      </em>
+    </span> 
+    <span class="word-4 char-group">
+      <span class="char-16">B</span>
+      <span class="char-17">r</span>
+      <span>
+        <span class="char-18">o</span>
+      </span>
+      <span class="char-19">k</span>
+      <span class="char-20">e</span>
+      <span class="char-21">n</span>
+    </span> 
+    <span class="word-5 char-group">
+      <span class="char-22">&hellip;</span>
+    </span> 
+    <span class="word-6 char-group">
+      <span class="char-23">A</span>
+    </span> 
+    <span class="word-7 char-group">
+      <span class="char-24">B</span>
+    </span> 
+    <span class="word-8 char-group">
+      <span class="char-25">C</span>
+    </span>
+  </span>
+</span>
+~~~
+
+#### Limitations
+
+ - Special characters that are written as it is (like this: `♥`, not this: `&hearts;`) will broken because of this plugin. Always use special characters written in HTML entities.
+ - To make an [ampersand](http://en.wikipedia.org/wiki/Ampersand "Wikipedia &ndash; Ampersand") symbol, use `&amp;`, not just `&`.
+ - Just keep your article and page title as simple as possible and you are safe.
+
+*[HTML]: Hyper Text Markup Language
