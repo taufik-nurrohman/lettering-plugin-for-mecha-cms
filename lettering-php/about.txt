@@ -1,7 +1,7 @@
-﻿Title: Lettering PHP
+Title: Lettering PHP
 Author: Taufik Nurrohman
 URL: http://latitudu.com
-Version: 1.0.0
+Version: 1.0.1
 
 ====
 
@@ -76,7 +76,7 @@ HTML markup has been tidied up.
 
 #### Limitations
 
- - Special characters that are written as it is (like this: `♥`, not this: `&hearts;`) will broken because of this plugin. Always use special characters written in HTML entities.
+ - Special characters that are written as it is (like this: `♥`, not this: `&hearts;`) will be broken by this plugin. Always use special characters that is written as HTML entities.
  - To make an [ampersand](http://en.wikipedia.org/wiki/Ampersand "Wikipedia &ndash; Ampersand") symbol, use `&amp;`, not just `&`.
  - Just keep your article and page title as simple as possible and you are safe.
 
