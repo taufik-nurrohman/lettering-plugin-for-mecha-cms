@@ -235,7 +235,7 @@ if(strpos($config->url_current, $config->url . '/' . $config->manager->slug) !==
     // Text unbreaker ... (hacky, I know)
     function do_remove_lettering_PHP($text) {
         return preg_replace_callback('#(<a .*?>)([\s\S]*?)(<\/a>)#', function($matches) {
-            return $matches[1] . preg_replace('#<span +(aria-(hidden|label)="|class="(word-|char-)).*?>|<\/span>#', "", $matches[2]) . $matches[3];
+            return $matches[1] . preg_replace('#<span(>| .*?>)|<\/span>#', "", $matches[2]) . $matches[3];
         }, $text);
     }
 
