@@ -1,1 +1,1 @@
-plugin_lettering_php_title_field: Pisahkan setiap huruf pada judul pos?
+plugin_lettering_php_title_field: Pisahkan Huruf-Huruf pada Judul Pos

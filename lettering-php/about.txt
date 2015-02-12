@@ -1,7 +1,7 @@
 Title: Lettering PHP
 Author: Taufik Nurrohman
 URL: http://latitudu.com
-Version: 1.0.1
+Version: 1.0.2
 
 ====
 
@@ -9,7 +9,7 @@ Version: 1.0.1
 
 Just like [lettering.js](http://github.com/davatron5000/Lettering.js "A JQuery Plugin for Radical Web Typography"), but this works in server side.
 
-Plugin manipulation will be activated optionally via custom field in the post editor, labelled as _Break post title text?_
+Plugin manipulation will be activated optionally via custom field in the post editor, labelled as _Break Post Title Text_
 
 #### Before
 
