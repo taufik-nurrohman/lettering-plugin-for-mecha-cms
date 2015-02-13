@@ -9,7 +9,7 @@ Version: 1.0.3
 
 Just like [lettering.js](http://github.com/davatron5000/Lettering.js "A JQuery Plugin for Radical Web Typography"), but this works in server side.
 
-Plugin manipulation will be activated optionally via custom field in the post editor, labelled as _Break Post Title Text_
+Plugin manipulation will be activated optionally via custom field in the post editor, labelled as _Break Post Title Text_.
 
 #### Before
 

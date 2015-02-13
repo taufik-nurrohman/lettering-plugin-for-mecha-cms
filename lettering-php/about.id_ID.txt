@@ -9,7 +9,7 @@ Version: 1.0.3
 
 Seperti [lettering.js](http://github.com/davatron5000/Lettering.js "A JQuery Plugin for Radical Web Typography"), tapi ini bekerja di sisi server.
 
-Manipulasi plugin akan aktif secara opsional melalui bidang kustom pada editor posting dengan label _Pisahkan Huruf-Huruf pada Judul Pos_
+Manipulasi plugin akan aktif secara opsional melalui bidang kustom pada editor posting dengan label _Pisahkan Huruf-Huruf pada Judul Pos_.
 
 #### Sebelum
 
