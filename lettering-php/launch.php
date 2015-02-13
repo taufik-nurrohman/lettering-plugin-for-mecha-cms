@@ -45,7 +45,7 @@ if(strpos($config->url_current, $config->url . '/' . $config->manager->slug) !==
                 }
             }
         }
-        return '<span aria-label="' . strip_tags($text) . '"><span aria-hidden="true" class="word-group">' . $results . '</span></span></span>';
+        return '<span aria-label="' . str_replace(array('"', '\''), array('&quot;', '&#039;'), strip_tags($text)) . '"><span aria-hidden="true" class="word-group">' . $results . '</span></span></span>';
     }
 
     // Text unbreaker ... (hacky, I know)
