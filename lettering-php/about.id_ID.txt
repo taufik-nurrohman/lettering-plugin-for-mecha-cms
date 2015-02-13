@@ -14,7 +14,7 @@ Manipulasi plugin akan aktif secara opsional melalui bidang kustom pada editor p
 #### Sebelum
 
 ~~~ .html
-Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; A B C
+Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; ☹ A B C
 ~~~
 
 #### Sesudah
@@ -22,7 +22,7 @@ Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; A B C
 Markup HTML telah dirapikan.
 
 ~~~ .html
-<span aria-label="Charlie&rsquo;s Bike is Broken &hellip; A B C">
+<span aria-label="Charlie&rsquo;s Bike is Broken &hellip; ☹ A B C">
   <span aria-hidden="true" class="word-group">
     <span class="word-1 char-group">
       <span class="char-1">C</span>
@@ -61,22 +61,19 @@ Markup HTML telah dirapikan.
       <span class="char-22">&hellip;</span>
     </span> 
     <span class="word-6 char-group">
-      <span class="char-23">A</span>
+      <span class="char-23">☹</span>
     </span> 
     <span class="word-7 char-group">
-      <span class="char-24">B</span>
+      <span class="char-24">A</span>
     </span> 
     <span class="word-8 char-group">
-      <span class="char-25">C</span>
+      <span class="char-25">B</span>
+    </span> 
+    <span class="word-9 char-group">
+      <span class="char-26">C</span>
     </span>
   </span>
 </span>
 ~~~
-
-#### Keterbatasan
-
- - Karakter spesial yang tertulis apa adanya (seperti ini: `♥`, bukan seperti ini: `&hearts;`) akan rusak dikarenakan oleh plugin ini. Selalu gunakan karakter spesial berupa entitas HTML.
- - Untuk membuat simbol _[ampersand](http://en.wikipedia.org/wiki/Ampersand "Wikipedia &ndash; Ampersand")_, gunakan `&amp;`, bukan hanya `&`.
- - Usahakan untuk membuat judul artikel dan halaman sesederhana mungkin.
 
 *[HTML]: Hyper Text Markup Language
