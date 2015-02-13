@@ -10,7 +10,7 @@ Plugin manipulation will be activated optionally via custom field in the post ed
 #### Before
 
 ~~~ .html
-Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; A B C
+Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; ☹ A B C
 ~~~
 
 #### After
@@ -18,8 +18,7 @@ Charlie&rsquo;s Bike <em>is</em> Br<span>o</span>ken &hellip; A B C
 HTML markup has been tidied up.
 
 ~~~ .html
-
-<span aria-label="Charlie&rsquo;s Bike is Broken &hellip; A B C">
+<span aria-label="Charlie&rsquo;s Bike is Broken &hellip; ☹ A B C">
   <span aria-hidden="true" class="word-group">
     <span class="word-1 char-group">
       <span class="char-1">C</span>
@@ -58,13 +57,16 @@ HTML markup has been tidied up.
       <span class="char-22">&hellip;</span>
     </span> 
     <span class="word-6 char-group">
-      <span class="char-23">A</span>
+      <span class="char-23">☹</span>
     </span> 
     <span class="word-7 char-group">
-      <span class="char-24">B</span>
+      <span class="char-24">A</span>
     </span> 
     <span class="word-8 char-group">
-      <span class="char-25">C</span>
+      <span class="char-25">B</span>
+    </span> 
+    <span class="word-9 char-group">
+      <span class="char-26">C</span>
     </span>
   </span>
 </span>
