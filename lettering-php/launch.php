@@ -1,16 +1,6 @@
 <?php
 
-// It is difficult to use the conditional page types inside the plugin file
-// as the conditional page types are declared inside the routes, while the
-// routes are declared after all of the plugin files finished loaded.
-//
-// Update
-// ------
-// This problem already fixed in Mecha 1.1.3, but I will keep this
-// conditional line remain intact to make this plugin compatible with the
-// older version of Mecha.
-
-if(strpos($config->url_current, $config->url . '/' . $config->manager->slug) !== 0) {
+if(strpos($config->url_path, $config->manager->slug . '/') !== 0) {
 
     // Text breaker ...
     function do_lettering_PHP($text) {
@@ -50,29 +40,24 @@ if(strpos($config->url_current, $config->url . '/' . $config->manager->slug) !==
 
     // Text unbreaker ... (hacky, I know)
     function do_remove_lettering_PHP($text) {
+        if(strpos($text, '<span class="word-1 char-group">') === false) return $text;
         return preg_replace_callback('#(<a .*?>)([\s\S]*?)(<\/a>)#', function($matches) {
             return $matches[1] . preg_replace('#<span(>| .*?>)|<\/span>#', "", $matches[2]) . $matches[3];
         }, $text);
     }
 
-    Weapon::add('before_shield_config_redefine', function() {
-        $article = Config::get('article');
-        $page = Config::get('page');
-        if(
-            (isset($article->fields->break_title_text) && $article->fields->break_title_text !== false) ||
-            (isset($page->fields->break_title_text) && $page->fields->break_title_text !== false)
-        ) {
-            // Break letters in article and page titles
-            Filter::add('article:title', 'do_lettering_PHP');
-            Filter::add('page:title', 'do_lettering_PHP');
-            // Do not break letters in widgets
-            Filter::add('widget:recent.post', 'do_remove_lettering_PHP');
-            Filter::add('widget:random.post', 'do_remove_lettering_PHP');
-            Filter::add('widget:related.post', 'do_remove_lettering_PHP');
-            // Reset article and page data
-            Config::set('article', isset($article->path) ? Get::article($article->path) : false);
-            Config::set('page', isset($page->path) ? Get::page($page->path) : false);
+    Filter::add('shield:lot', function($data) {
+        if(isset($data['article']->fields->break_title_text) && $data['article']->fields->break_title_text !== false) {
+            $data['article']->title = do_lettering_PHP($data['article']->title);
         }
+        if(isset($data['page']->fields->break_title_text) && $data['page']->fields->break_title_text !== false) {
+            $data['page']->title = do_lettering_PHP($data['page']->title);
+        }
+        // Do not break letters in widgets
+        Filter::add('widget:recent.post', 'do_remove_lettering_PHP');
+        Filter::add('widget:random.post', 'do_remove_lettering_PHP');
+        Filter::add('widget:related.post', 'do_remove_lettering_PHP');
+        return $data;
     });
 
 }
