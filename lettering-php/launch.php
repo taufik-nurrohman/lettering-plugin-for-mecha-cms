@@ -46,12 +46,9 @@ if(strpos($config->url_path, $config->manager->slug . '/') !== 0) {
         }, $text);
     }
 
-    Filter::add('shield:lot', function($data) {
-        if(isset($data['article']->fields->break_title_text) && $data['article']->fields->break_title_text !== false) {
-            $data['article']->title = do_lettering_PHP($data['article']->title);
-        }
-        if(isset($data['page']->fields->break_title_text) && $data['page']->fields->break_title_text !== false) {
-            $data['page']->title = do_lettering_PHP($data['page']->title);
+    Filter::add('shield:lot', function($data) use($config) {
+        if(isset($data[$config->page_type]->fields->break_title_text)) {
+            $data[$config->page_type]->title = do_lettering_PHP($data[$config->page_type]->title);
         }
         // Do not break letters in widgets
         Filter::add('widget:recent.post', 'do_remove_lettering_PHP');
