@@ -1,6 +1,6 @@
 <?php
 
-if(strpos($config->url_path, $config->manager->slug . '/') !== 0) {
+if($config->page_type !== 'manager') {
 
     // Text breaker ...
     function do_lettering_PHP($text) {
@@ -47,6 +47,7 @@ if(strpos($config->url_path, $config->manager->slug . '/') !== 0) {
     }
 
     Filter::add('shield:lot', function($data) use($config) {
+        // Break letters
         if(isset($data[$config->page_type]->fields->break_title_text)) {
             $data[$config->page_type]->title = do_lettering_PHP($data[$config->page_type]->title);
         }
