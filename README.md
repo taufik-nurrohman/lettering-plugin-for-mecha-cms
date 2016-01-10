@@ -19,7 +19,7 @@ HTML markup has been tidied up.
 
 ~~~ .html
 <span aria-label="Charlie&rsquo;s Bike is Broken &hellip; ☹ A B C">
-  <span aria-hidden="true" class="word-group">
+  <span aria-hidden="true" class="clause-1 word-group">
     <span class="word-1 char-group">
       <span class="char-1">C</span>
       <span class="char-2">h</span>
@@ -71,5 +71,3 @@ HTML markup has been tidied up.
   </span>
 </span>
 ~~~
-
-Upload the `lettering-php` folder along with its contents through the plugin uploader. You need to compress the folder into a ZIP file to simplify the uploading process. After that, go to the plugin manager page and follow the instructions on the **About** tab.

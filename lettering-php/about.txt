@@ -23,7 +23,7 @@ HTML markup has been tidied up.
 
 ~~~ .html
 <span aria-label="Charlie&rsquo;s Bike is Broken &hellip; ☹ A B C">
-  <span aria-hidden="true" class="word-group">
+  <span aria-hidden="true" class="clause-1 word-group">
     <span class="word-1 char-group">
       <span class="char-1">C</span>
       <span class="char-2">h</span>
