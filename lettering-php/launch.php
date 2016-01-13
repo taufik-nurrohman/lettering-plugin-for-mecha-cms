@@ -34,9 +34,9 @@ function do_lettering($text) {
     return '<span aria-label="' . str_replace(array('"', '\''), array('&quot;', '&#039;'), trim(strip_tags($text))) . '"><span aria-hidden="true" class="clause-1 word-group">' . $results . '</span></span></span>';
 }
 
-$c = $config->page_type;
-if(Mecha::walk(glob(POST . DS . '*', GLOB_NOSORT | GLOB_ONLYDIR))->has(POST . DS . $c)) {
-    Filter::add('shield:lot', function($data) use($c) {
+if($config->is->post) {
+    Filter::add('shield:lot', function($data) {
+        $c = $config->page_type;
         if(isset($data[$c]->fields->break_title_text) && $data[$c]->fields->break_title_text !== false) {
             $data[$c]->title = do_lettering($data[$c]->title);
         }
